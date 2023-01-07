@@ -63,7 +63,7 @@ Clone the project locally:
 
 ```
 git clone https://github.com/gbkelley/epic-wrapper.git
-cd hello-world-wrapper
+cd epic-wrapper
 git submodule update --init --recursive
 ```
 
