@@ -67,7 +67,7 @@ Now you are ready to build the `epic-node` package!
 
 ## Cloning
 
-Clone the project locally:
+Clone the project locally: (if you have the epic node binary just create the epic-node folder and place the epic binary as epic-node there)
 
 ```
 git clone https://github.com/skykingisepic/epic-wrapper.git
