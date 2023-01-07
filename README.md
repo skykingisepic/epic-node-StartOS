@@ -72,6 +72,12 @@ Clone the project locally:
 git clone https://github.com/gbkelley/epic-wrapper.git
 cd epic-wrapper
 git submodule update --init --recursive
+git clone https://github.com/EpicCash/epic.git
+mv epic epic-node
+cd epic-node
+cargo build --release
+mv target/release/epic target/release/epic-node
+cd ..
 ```
 
 ## Building
