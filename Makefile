@@ -39,13 +39,7 @@ else
 endif
 
 $(PKG_ID).s9pk: manifest.yaml instructions.md icon.png LICENSE scripts/embassy.js docker-images/x86_64.tar
-ifeq ($(ARCH),aarch64)
-	@echo "embassy-sdk: Preparing aarch64 package ..."
-else ifeq ($(ARCH),x86_64)
-	@echo "embassy-sdk: Preparing x86_64 package ..."
-else
-	@echo "embassy-sdk: Preparing Universal Package ..."
-endif
-	@embassy-sdk pack
+@echo "embassy-sdk: Preparing x86_64 package ..."
+@embassy-sdk pack
 
 
