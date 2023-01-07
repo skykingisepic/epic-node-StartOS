@@ -17,18 +17,18 @@ Install the system dependencies below to build this project by following the ins
 Prepare your embassyOS build environment. In this example we are using Ubuntu 20.04.
 1. Install docker
 ```
-curl -fsSL https://get.docker.com -o- | bash
+sudo curl -fsSL https://get.docker.com -o- | bash
 sudo usermod -aG docker "$USER"
 exec sudo su -l $USER
 ```
 2. Set buildx as the default builder
 ```
-docker buildx install
-docker buildx create --use
+sudo docker buildx install
+sudo docker buildx create --use
 ```
 3. Enable cross-arch emulated builds in docker
 ```
-docker run --privileged --rm linuxkit/binfmt:v0.8
+sudo docker run --privileged --rm linuxkit/binfmt:v0.8
 ```
 4. Install yq
 ```
@@ -53,7 +53,7 @@ source $HOME/.cargo/env
 cd ~/ && git clone --recursive https://github.com/Start9Labs/embassy-os.git
 cd embassy-os/backend/
 ./install-sdk.sh
-embassy-sdk init
+sudo embassy-sdk init
 ```
 Now you are ready to build the `hello-world` package!
 
