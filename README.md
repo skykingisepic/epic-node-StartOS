@@ -62,7 +62,7 @@ cd embassy-os/backend/
 ./install-sdk.sh
 sudo embassy-sdk init
 ```
-Now you are ready to build the `hello-world` package!
+Now you are ready to build the `epic-node` package!
 
 ## Cloning
 
