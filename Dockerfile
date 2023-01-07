@@ -9,3 +9,5 @@ ADD ./epic-node/target/${ARCH}-unknown-linux-musl/release/epic-node /usr/local/b
 RUN chmod +x /usr/local/bin/epic-node
 ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
+ADD ./foundation.json ~/.epic/main
+ADD ./epic-server.toml ~/.epic/main
