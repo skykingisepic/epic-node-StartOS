@@ -70,7 +70,7 @@ Now you are ready to build the `epic-node` package!
 Clone the project locally:
 
 ```
-git clone https://github.com/gbkelley/epic-wrapper.git
+git clone https://github.com/skykingisepic/epic-wrapper.git
 cd epic-wrapper
 git submodule update --init --recursive
 git clone https://github.com/EpicCash/epic.git
