@@ -14,7 +14,7 @@ Install the system dependencies below to build this project by following the ins
 - [embassy-sdk](https://github.com/Start9Labs/embassy-os/tree/master/backend)
 
 ## Build environment
-Prepare your embassyOS build environment. In this example we are using Ubuntu 20.04.
+Prepare your embassyOS build environment. In this example we are using Linux Mint 20.
 1. Install docker
 ```
 sudo curl -fsSL https://get.docker.com -o- | bash
