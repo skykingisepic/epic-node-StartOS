@@ -26,9 +26,10 @@ exec sudo su -l $USER
 sudo docker buildx install
 sudo docker buildx create --use
 ```
-3. Enable cross-arch emulated builds in docker
+3. Enable cross-arch emulated builds in docker and get alpine
 ```
 sudo docker run --privileged --rm linuxkit/binfmt:v0.8
+sudo docker pull alpine
 ```
 4. Install yq
 ```
