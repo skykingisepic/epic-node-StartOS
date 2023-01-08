@@ -1,0 +1,43 @@
+# Run with sudo after manual cargo build
+
+PKG_ID := $(shell yq e ".id" manifest-arm64.yaml)
+PKG_VERSION := $(shell yq e ".version" manifest-arm64.yaml)
+TS_FILES := $(shell find ./ -name \*.ts)
+EPIC_NODE_SRC := $(shell find ./epic-node)
+
+# delete the target of a rule if it has changed and its recipe exits with a nonzero exit status
+.DELETE_ON_ERROR:
+
+all: verify
+
+verify: $(PKG_ID).s9pk
+	@embassy-sdk verify s9pk $(PKG_ID).s9pk
+	@echo " Done!"
+	@echo "   Filesize: $(shell du -h $(PKG_ID).s9pk) is ready"
+
+install:
+ifeq (,$(wildcard ~/.embassy/config.yaml))
+	@echo; echo "You must define \"host: http://embassy-server-name.local\" in ~/.embassy/config.yaml config file first"; echo
+else
+	embassy-cli package install $(PKG_ID)-aarch64.s9pk
+endif
+
+clean:
+	rm -rf docker-images
+	rm -f image.tar
+	rm -f $(PKG_ID)-aarch64.s9pk
+	rm -f scripts/*.js
+
+scripts/embassy.js: $(TS_FILES)
+	deno bundle scripts/embassy.ts scripts/embassy.js
+
+docker-images/arm64.tar: foundation.json epic-server.toml chaindata.zip docker_entrypoint.sh epic-node/target/release/arm64/epic-node
+	mkdir -p docker-images
+	docker buildx build -f Dockerfile.arm64 --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=aarch64 --platform=linux/arm64 -o type=docker,dest=docker-images/arm64.tar .
+
+
+$(PKG_ID).s9pk: manifest-arm64.yaml instructions.md icon.png LICENSE scripts/embassy.js docker-images/arm64.tar
+
+	@echo "embassy-sdk: Preparing arm64 package ..."
+	@embassy-sdk pack
+

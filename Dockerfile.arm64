@@ -1,0 +1,15 @@
+FROM alpine:3.17
+
+RUN apk update
+RUN apk add --no-cache tini && \
+    rm -f /var/cache/apk/*
+
+ADD ./epic-node/target/release/arm64/epic-node /usr/local/bin/epic-node
+RUN chmod +x /usr/local/bin/epic-node
+ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
+RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
+ADD ./foundation.json ~/.epic/main/foundation.json
+ADD ./epic-server.toml /usr/local/bin/epic-server.toml
+ADD ./chaindata.zip ~/.epic/main
+
+
