@@ -86,7 +86,7 @@ cd ..
 To build the `epic-node` package for x86_64 using embassy-sdk version >=0.3.3, run the following command:
 
 ```
-./build-x86 or ./build-arm64
+./build-x86 for epic-node-x86.s9pk or ./build-arm64 for epic-node-arm64.s9pk
 ```
 
 ## Installing (on embassyOS)
