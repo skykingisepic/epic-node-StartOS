@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cp -f manifest-arm64.yaml manifest.yaml
 make -f Makefile.arm64
 mv -f epic-node.s9pk epic-node-arm64.s9pk
 
