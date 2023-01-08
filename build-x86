@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cp -f manifest-x86.yaml manifest.yaml
 make -f Makefile.x86
 mv -f epic-node.s9pk epic-node-x86.s9pk
 
