@@ -7,7 +7,7 @@ else
 	wget https://epiccash.s3.sa-east-1.amazonaws.com/mainnet.zip -P ~/.epic/main
 	unzip ~/.epic/main/mainnet.zip -d ~/.epic/main
 	rm ~/.epic/main/mainnet.zip
-	touch rm ~/.epic/main/bs
+	touch ~/.epic/main/bs
 	echo "Done"
 fi
 
