@@ -10,6 +10,6 @@ ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
 ADD ./foundation.json ~/.epic/main/foundation.json
 ADD ./epic-server.toml /usr/local/bin/epic-server.toml
-ADD https://epiccash.s3.sa-east-1.amazonaws.com/mainnet.zip ~/.epic/main
+
 
 
