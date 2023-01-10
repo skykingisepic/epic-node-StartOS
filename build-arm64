@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cp -f Dockerfile.arm64 Dockerfile
 make -f Makefile.arm64
 mv -f epic-node.s9pk epic-node-arm64.s9pk
 
