@@ -1,5 +1,4 @@
-FROM arm64v8/debian
-
+FROM arm64v8/ubuntu
 ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-arm64 /tini
 RUN chmod +x /tini
 
