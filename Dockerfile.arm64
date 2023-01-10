@@ -1,17 +1,12 @@
-FROM alpine:3.17
+FROM arm64v8/debian
 
-RUN apk update
-RUN apk add --no-cache tini && \
-    rm -f /var/cache/apk/*
+ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-arm64 /tini
+RUN chmod +x /tini
 
-ADD ./epic-node/target/release/arm64/epic-node /usr/local/bin/epic-node
+ADD epic-node/target/release/arm64/epic-node /usr/local/bin/epic-node
 RUN chmod +x /usr/local/bin/epic-node
-ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
+ADD docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
-RUN mkdir -p ~/.epic
-RUN mkdir -p ~/.epic/main
-ADD ./foundation.json ~/.epic/main/foundation.json
-ADD ./epic-server.toml /usr/local/bin/epic-server.toml
-ADD ./epic-server.toml ~/.epic/main/epic-server.toml
-
+ADD foundation.json /epic/foundation.json
+ADD epic-server.toml /epic/epic-server.toml
 
