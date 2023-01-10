@@ -92,7 +92,7 @@ interfaces:
         ssl: true
         internal: 80
     # Denotes if the service has a user interface to display
-    ui: true
+    ui: false
     # Denotes the protocol specifications used by this interface
     protocols:
       - tcp
