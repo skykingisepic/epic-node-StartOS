@@ -29,7 +29,7 @@ clean:
 scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
 
-docker-images/x86_64.tar: ./foundation.json ./epic-server.toml ./docker_entrypoint.sh ./epic-node/target/release/epic-node
+docker-images/x86_64.tar: ./foundation.json ./epic-server.toml ./docker_entrypoint.sh ./epic-node-x86
 	mkdir -p docker-images
 	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=x86_64 --platform=linux/amd64 -o type=docker,dest=docker-images/x86_64.tar .
 
