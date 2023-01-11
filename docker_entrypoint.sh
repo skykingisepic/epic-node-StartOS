@@ -15,4 +15,4 @@ else
 	echo "Done"
 fi
 
-exec /tini epic-node
+exec epic-node
