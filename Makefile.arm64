@@ -30,7 +30,7 @@ clean:
 scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
 
-docker-images/arm64.tar: ./Dockerfile ./foundation.json ./epic-server.toml ./docker_entrypoint.sh ./epic-node/target/release/arm64/epic-node
+docker-images/arm64.tar: ./Dockerfile ./foundation.json ./epic-server.toml ./docker_entrypoint.sh ./epic-node-a64
 	mkdir -p docker-images
 	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=aarch64 --platform=linux/arm64 -o type=docker,dest=docker-images/arm64.tar .
 
