@@ -83,6 +83,8 @@ cd ..
 
 ## Building
 
+First, unzip the two server binaries epic-node-86.zip and epic-node-a64.zip
+
 To build the `epic-node` package using embassy-sdk version >=0.3.3, run the following command:
 
 ```
