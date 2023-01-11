@@ -2,7 +2,7 @@
 
 if [ -e ~/.epic/main/bs ]
 then
-	echo "Skiping"
+	echo "Skipping"
 else
 	echo "Setting up bootstrap chain_data file..."
 	mkdir -p ~/.epic
