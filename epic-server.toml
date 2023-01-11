@@ -64,7 +64,7 @@ header_sync_timeout = 20
 
 #whether to run the ncurses TUI. Ncurses must be installed and this
 #will also disable logging to stdout
-run_tui = true
+run_tui = false
 
 #Whether to run a test miner. This is only for developer testing (chaintype
 #usertesting) at cuckoo 16, and will only mine into the default wallet port.
