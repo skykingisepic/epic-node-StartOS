@@ -1,3 +1,3 @@
 # Instructions for EPIC Node Server
 
-Configured to run in TUI mode
+On first run the installer will download the Epic chain_data bootstrap file (2.5Gb) into the /root/.epic/main folder, unzip to chain_data, then delete the .zip file. This takes approx 10 minutes depending on your internet connection. There is no indication on the dashboard that this is processing before the node server actually starts even though the server shows 'Running'. The node server has a TUI mode but is not reachable with embassyOS - it would only be reachable if started in a linux terminal screen session. For more information you can set the default logging in the epic-server.toml file to "Info" from "Warning" and rebuild the package. You can then ssh into embassyOS and 'cat /embassy-data/package-data/volumes/epic-node/data/main/.epic/main/epic-server.log'
