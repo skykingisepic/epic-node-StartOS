@@ -88,9 +88,21 @@ interfaces:
         80: "80"
     # Port mappings are from the external port to the internal container port
     lan-config:
-      443:
-        ssl: true
-        internal: 80
+       3413:
+         ssl: false
+         internal: 3413
+       3414:
+         ssl: false
+         internal: 3414
+       3415:
+         ssl: false
+         internal: 3415
+       3416:
+         ssl: false
+         internal: 3416
+      #443:
+      #  ssl: true
+      #  internal: 80
     # Denotes if the service has a user interface to display
     ui: false
     # Denotes the protocol specifications used by this interface
