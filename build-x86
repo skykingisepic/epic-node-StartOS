@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cp -f Dockerfile.x86 Dockerfile
-make -f Makefile.x86
-mv -f epic-node.s9pk epic-node-x86.s9pk
-
-
-
