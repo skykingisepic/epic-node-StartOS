@@ -71,7 +71,6 @@ Clone the project locally:
 
 ```
 git clone https://github.com/skykingisepic/epic-node-embassyOS.git
-
 ```
 
 ## Building
