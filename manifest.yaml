@@ -11,9 +11,9 @@ release-notes: "Initial Release for Start9"
 # The type of license for the project. Include the LICENSE in the root of the project directory. A license is required for a Start9 package.
 license: Apache-2.0
 # The Start9 wrapper repository URL for the package. This repo contains the manifest file (this), any scripts necessary for configuration, backups, actions, or health checks (more below). This key must exist. But could be embedded into the source repository. 
-wrapper-repo: "https://github.com/gbkelley/epic-wrapper"
+wrapper-repo: "https://github.com/skykingisepic/epic-node-embassyOS"
 # The original project repository URL. There is no upstream repo in this example
-upstream-repo: "https://github.com/EpicCash/epic"
+upstream-repo: "https://github.com/EpicCash/epic and https://github.com/skykingisepic/epic-node-aarch64.git"
 # URL to the support site / channel for the project. This key can be omitted if none exists, or it can link to the original project repository issues.
 support-site: "https://t.me/epiccashhelpdesk"
 # URL to the marketing site for the project. This key can be omitted if none exists, or it can link to the original project repository. 
