@@ -70,18 +70,16 @@ Now you are ready to build the `epic-node` package!
 Clone the project locally: (if you have the epic node binaries just put them in the repo folder as epic-node-x86 and/or epic-node-a64)
 
 ```
-git clone https://github.com/skykingisepic/epic-wrapper.git
+git clone https://github.com/skykingisepic/epic-node-embassyOS.git
 
 ```
 
 ## Building
 
-First, unzip the two server binaries epic-node-86.zip and epic-node-a64.zip
-
 To build the `epic-node` package using embassy-sdk version >=0.3.3, run the following command:
 
 ```
-./build-x86 for epic-node-x86.s9pk or ./build-arm64 for epic-node-arm64.s9pk
+make
 ```
 
 ## Installing (on embassyOS)
