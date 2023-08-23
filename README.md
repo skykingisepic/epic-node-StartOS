@@ -119,9 +119,8 @@ Epic Node Source repo located at https://github.com/EpicCash/epic
 Build using Rust v1.62
 
 For aarch64 build on Pi4 you must change one line in Cargo.toml located in core folder:
-...
-
+```
 #randomx = { path = "./randomx-rust", version = "0.1.0" }
 randomx = { git = "https://github.com/johanneshahn/randomx-rs.git"}
-...
+```
 
