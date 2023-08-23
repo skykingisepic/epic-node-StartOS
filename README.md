@@ -110,7 +110,7 @@ Go to your Embassy Services page, select **EPIC Node Server**, configure and sta
 
 ...
 
-## Binary Builds and Source Notes
+### Binary Builds and Source Notes
 
 Epic Node Source repo located at https://github.com/EpicCash/epic
 
