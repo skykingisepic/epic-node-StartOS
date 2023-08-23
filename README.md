@@ -112,6 +112,8 @@ Go to your Embassy Services page, select **EPIC Node Server**, configure and sta
 
 ### Binary Builds and Source Notes
 
+Included binaries were built on Pi4 running latest Raspbian Lite for aarch64 and Linux Mint 20.3 for X86_64
+
 Epic Node Source repo located at https://github.com/EpicCash/epic
 
 Build using Rust v1.62
