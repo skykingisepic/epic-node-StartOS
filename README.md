@@ -107,3 +107,8 @@ make install
 Go to your Embassy Services page, select **EPIC Node Server**, configure and start the service. Then, verify its interfaces are accessible.
 
 **Done!** 
+
+...
+
+Epic Node Source repo located at https://github.com/EpicCash/epic
+
