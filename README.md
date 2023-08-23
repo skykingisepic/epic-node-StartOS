@@ -116,7 +116,7 @@ Included binaries were built on Pi4 running latest Raspbian Lite for aarch64 and
 
 Epic Node Source repo located at https://github.com/EpicCash/epic
 
-Build using Rust v1.62
+Build using Rust v1.62 (see 'Building the projects' section in repo README)
 
 For aarch64 build on Pi4 you must change one line in Cargo.toml located in core folder:
 ```
