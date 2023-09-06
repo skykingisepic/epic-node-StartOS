@@ -91,7 +91,7 @@ port = 3414
 #how to seed this server, can be None, List or DNSSeed
 #seeding_type = "DNSSeed"
 seeding_type = "List"
-seeds = ["95.217.197.180:3414"]
+seeds = ["95.217.197.180:3517","5.161.127.56:3414","5.75.242.4:3414","5.78.71.29:3414"]
 
 
 #If the seeding type is List, the list of peers to connect to can
@@ -123,7 +123,7 @@ seeds = ["95.217.197.180:3414"]
 # dandelion_peer = "10.0.0.1:13144"
 
 [server.p2p_config.capabilities]
-bits = 15
+bits = 31
 
 
 #########################################
