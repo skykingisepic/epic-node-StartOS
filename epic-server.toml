@@ -61,6 +61,8 @@ skip_sync_wait = false
 #If no valid value is given to this variable (e.g negative values, zero),
 #the default value of 10 (seconds) is used.
 header_sync_timeout = 20
+skip_pow_validation = true
+disable_checkpoints = true
 
 #whether to run the ncurses TUI. Ncurses must be installed and this
 #will also disable logging to stdout
