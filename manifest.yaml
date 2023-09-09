@@ -81,7 +81,7 @@ interfaces:
     # A human readable name for display in the UI
     name: EPIC Node Server
     # A descriptive description of what the interface does
-    description: TUI available via ssh only (no tor or http)
+    description: TUI available via ssh only (see Instructions)
     tor-config:
     # Port mappings are from the external port to the internal container port
       #port-mapping:
