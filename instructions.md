@@ -8,7 +8,7 @@ start9@{hostname}:\~$ sudo docker exec -it epic-node.embassy bash (to enter Dock
 
 root@epic-node:/# screen -r server-node (attach to screen running EPIC node)
 
-<crl>A then D to detach from screen and back to root@epic-node:/#
+\<crl>A then D to detach from screen and back to root@epic-node:/#
 
 root@epic-node:/# exit (to leave Docker)
 
