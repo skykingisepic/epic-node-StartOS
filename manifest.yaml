@@ -81,11 +81,11 @@ interfaces:
     # A human readable name for display in the UI
     name: EPIC Node Server
     # A descriptive description of what the interface does
-    description: Display Console for EPIC Node Server
+    description: EPIC Node Server TUI available via ssh only
     tor-config:
     # Port mappings are from the external port to the internal container port
-      port-mapping:
-        80: "80"
+      #port-mapping:
+      #  80: "80"
     # Port mappings are from the external port to the internal container port
     lan-config:
        3413:
