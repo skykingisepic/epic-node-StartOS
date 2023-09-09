@@ -11,8 +11,15 @@ else
 	unzip ~/.epic/main/bootstrap.zip -d ~/.epic/main
 	rm ~/.epic/main/bootstrap.zip
 	touch ~/.epic/main/bs
-	cp /epic/* ~/.epic/main
 	echo "Done"
 fi
 
-exec epic-node
+cp /epic/* ~/.epic/main
+locale-gen en_US.UTF-8
+/bin/screen -dmS node-server /usr/local/bin/epic-node
+tail -f /dev/null
+
+#cp /epic/* ~/.epic/main
+#exec epic-node
+
+
