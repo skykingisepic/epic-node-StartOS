@@ -5,8 +5,12 @@ On first run the installer will download the Epic chain_data bootstrap file (2.5
 Access to the EPIC Node Server is done through ssh. Setup and run ssh, login as user:start9
 
 start9@{hostname}:\~$ sudo docker exec -it epic-node.embassy bash (to enter Docker)
+
 root@epic-node:/# screen -r server-node (attach to screen running EPIC node)
+
 <crl>A then D to detach from screen and back to root@epic-node:/#
+
 root@epic-node:/# exit (to leave Docker)
+
 start9@{hostname}:\~$ exit (to end ssh session)
 
