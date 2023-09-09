@@ -19,7 +19,4 @@ locale-gen en_US.UTF-8
 /bin/screen -dmS node-server /usr/local/bin/epic-node
 tail -f /dev/null
 
-#cp /epic/* ~/.epic/main
-#exec epic-node
-
 
