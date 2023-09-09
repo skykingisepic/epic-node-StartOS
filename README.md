@@ -104,7 +104,7 @@ make install
 
 ### Verify Install
 
-Go to your Embassy Services page, select **EPIC Node Server**, configure and start the service. Then, verify its interfaces are accessible.
+Go to your Embassy Services page, select **EPIC Node Server**, and start the service. Then, verify its interfaces are accessible via ssh, docker, and screen.
 
 **Done!** 
 
