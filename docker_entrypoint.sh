@@ -2,7 +2,7 @@
 
 if [ -e ~/.epic/main/bs ]
 then
-	echo "Starting Epic Node Server..."
+	echo "chain_data exists - no bootstrap needed..."
 else
 	echo "Setting up bootstrap chain_data file..."
 	mkdir -p ~/.epic
@@ -13,7 +13,7 @@ else
 	touch ~/.epic/main/bs
 	echo "Done"
 fi
-
+echo "Setting locale and Starting Node Server..."
 cp /epic/* ~/.epic/main
 locale-gen en_US.UTF-8
 /bin/screen -dmS node-server /usr/local/bin/epic-node
