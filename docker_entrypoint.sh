@@ -2,7 +2,7 @@
 
 if [ -e ~/.epic/main/bs ]
 then
-	echo "Skipping"
+	echo "Starting Epic Node Server..."
 else
 	echo "Setting up bootstrap chain_data file..."
 	mkdir -p ~/.epic
