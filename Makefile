@@ -1,6 +1,10 @@
 PKG_ID := $(shell yq e ".id" manifest.yaml)
 PKG_VERSION := $(shell yq e ".version" manifest.yaml)
 TS_FILES := $(shell find ./ -name \*.ts)
+AARCHZIP := $(shell wget https://github.com/EpicCash/epic/releases/tag/v3.4.0/epic-startos-3.4.0-linux-aarch64.tar.gz)
+AARCHUZIP := $(shell tar -zxf epic-startos-3.4.0-linux-aarch64.tar.gz)
+AMDZIP := $(shell wget https://github.com/EpicCash/epic/releases/tag/v3.4.0/epic-startos-3.4.0-linux-amd64.tar.gz)
+AMDUZIP := $(shell tar -zxf epic-startos-3.4.0-linux-amd64.tar.gz)
 #HELLO_WORLD_SRC := $(shell find ./hello-world/src) hello-world/Cargo.toml hello-world/Cargo.lock
 
 # delete the target of a rule if it has changed and its recipe exits with a nonzero exit status
