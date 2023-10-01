@@ -1,11 +1,15 @@
 PKG_ID := $(shell yq e ".id" manifest.yaml)
 PKG_VERSION := $(shell yq e ".version" manifest.yaml)
 TS_FILES := $(shell find ./ -name \*.ts)
-AARCHZIP := $(shell wget https://github.com/EpicCash/epic/releases/tag/v3.4.0/epic-startos-3.4.0-linux-aarch64.tar.gz)
-AARCHUZIP := $(shell tar -zxf epic-startos-3.4.0-linux-aarch64.tar.gz)
-AMDZIP := $(shell wget https://github.com/EpicCash/epic/releases/tag/v3.4.0/epic-startos-3.4.0-linux-amd64.tar.gz)
-AMDUZIP := $(shell tar -zxf epic-startos-3.4.0-linux-amd64.tar.gz)
-#HELLO_WORLD_SRC := $(shell find ./hello-world/src) hello-world/Cargo.toml hello-world/Cargo.lock
+deldnld := $(shell rm epic*.tar.* && rm sha256sum*.*)
+wg := $(shell wget https://github.com/EpicCash/epic/releases/download/v3.4.0/epic-startos-3.4.0-aarch64.tar.gz)
+wg := $(shell wget https://github.com/EpicCash/epic/releases/download/v3.4.0/sha256sum-epic-startos-3.4.0-aarch64.txt)
+utar := $(shell tar -zxf epic-startos-3.4.0-aarch64.tar.gz)
+wg := $(shell wget https://github.com/EpicCash/epic/releases/download/v3.4.0/epic-startos-3.4.0-amd64.tar.gz)
+wg := $(shell wget https://github.com/EpicCash/epic/releases/download/v3.4.0/sha256sum-epic-startos-3.4.0-amd64.txt)
+utar := $(shell tar -zxf epic-startos-3.4.0-amd64.tar.gz)
+valid1 := $(shell sha256sum -c sha256sum-epic-startos-3.4.0-amd64.txt)
+valid2 := $(shell sha256sum -c sha256sum-epic-startos-3.4.0-aarch64.txt)
 
 # delete the target of a rule if it has changed and its recipe exits with a nonzero exit status
 .DELETE_ON_ERROR:
@@ -34,6 +38,9 @@ scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
 
 docker-images/aarch64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh epic-node-aarch64
+ifeq ($(findstring FAILED,$(valid2)),FAILED)
+	@echo "sha256sum Validation Failed for epic-node-aarch64 binary"; exit 1
+endif
 ifeq ($(ARCH),x86_64)
 else
 	mkdir -p docker-images
@@ -41,6 +48,9 @@ else
 endif
 
 docker-images/x86_64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh epic-node-x86_64
+ifeq ($(findstring FAILED,$(valid1)),FAILED)
+	@echo "sha256sum Validation Failed for epic-node-x86_64 binary"; exit 1
+endif
 ifeq ($(ARCH),aarch64)
 else
 	mkdir -p docker-images
