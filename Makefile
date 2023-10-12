@@ -37,7 +37,7 @@ clean:
 scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
 
-docker-images/aarch64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh epic-node-aarch64
+docker-images/aarch64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh checkup.sh epic-node-aarch64
 ifeq ($(findstring FAILED,$(valid2)),FAILED)
 	@echo "sha256sum Validation Failed for epic-node-aarch64 binary"; exit 1
 endif
@@ -47,7 +47,7 @@ else
 	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=aarch64 --platform=linux/arm64 -o type=docker,dest=docker-images/aarch64.tar .
 endif
 
-docker-images/x86_64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh epic-node-x86_64
+docker-images/x86_64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh checkup.sh epic-node-x86_64
 ifeq ($(findstring FAILED,$(valid1)),FAILED)
 	@echo "sha256sum Validation Failed for epic-node-x86_64 binary"; exit 1
 endif

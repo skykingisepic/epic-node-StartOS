@@ -30,7 +30,7 @@ db_root = "/root/.epic/main/chain_data"
 api_http_addr = "0.0.0.0:3413"
 
 #path of the secret token used by the API to authenticate the calls
-#comment it to disable basic auth
+#comment the it to disable basic auth
 #api_secret_path = ".api_secret"
 #foreign_api_secret_path = ".foreign_api_secret"
 
