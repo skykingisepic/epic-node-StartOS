@@ -2,6 +2,7 @@ FROM ubuntu:20.04
 
 RUN apt-get update \
   && apt-get install -y wget \
+  && apt-get install -y curl \
   && apt-get install -y unzip \
   && apt-get install -y libncurses5 \
   && apt-get install -y libncursesw5 \
@@ -18,6 +19,8 @@ ADD epic-node-${ARCH} /usr/local/bin/epic-node
 RUN chmod +x /usr/local/bin/epic-node
 ADD docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
+ADD checkup.sh /usr/local/bin/checkup.sh
+RUN chmod a+x /usr/local/bin/checkup.sh
 ADD foundation.json /epic/foundation.json
 ADD epic-server.toml /epic/epic-server.toml
 

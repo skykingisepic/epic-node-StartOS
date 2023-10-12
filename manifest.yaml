@@ -65,7 +65,18 @@ main:
     # Specifies where on the service's file system its persistence directory should be mounted prior to service startup
     main: /root
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/embassy-pages-wrapper
-health-checks: {}
+health-checks:
+  synced:
+    name: Synced
+    success-message: EPIC Node is synced with the network
+    type: docker
+    image: main
+    system: false
+    entrypoint: checkup.sh
+    args: []
+    mounts: {}
+    io-format: yaml
+    inject: true
 config: ~
 properties: ~
 #  type: script
