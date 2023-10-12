@@ -23,10 +23,10 @@ build: ["make"]
 # Human readable descriptors for the service. These are used throughout the EmbassyOS user interface, primarily in the marketplace.
 description:
   # This is the first description visible to the user in the marketplace.
-  short: EPIC Node Service
+  short: EPIC Node Server
   # This description will display with additional details in the service's individual marketplace page
   long: |
-    EPIC Node Service is a service that launches a Node Server as part of the Global EPIC Cash Blockchain.
+    EPIC Node Server is a Service that launches a Node Server as part of the Global EPIC Cash Blockchain.
 # These assets are static files necessary for packaging the service for Start9 (into an s9pk). Each value is a path to the specified asset. If an asset is missing from this list, or otherwise denoted, it will be defaulted to the values denoted below. 
 assets:
   # Default = LICENSE.md
