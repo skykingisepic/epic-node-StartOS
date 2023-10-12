@@ -16,6 +16,6 @@ start9@{hostname}:\~$ exit (to end ssh session)
 
 If the Server is stuck 'Waiting For Peers' then login via ssh and enter Docker. run 'rm -R /root/.epic/main/peer' and restart the Service.
 
-If the blockchain files become corrupted, then login via ssh and enter Docker. run 'rm /root/.epic/main/bs'
+If the blockchain files become corrupted, then login via ssh and enter Docker. run 'rm /root/.epic/main/bs' to download the latest bootstrap again.
 
 
