@@ -15,16 +15,14 @@ if [ $error_code -ne 0 ]; then
 fi
 
 if [[ "$sync" == *"no_sync"* ]]; then
-  echo "Node Synced and Running..." >&2
-  echo "Blockchain height:" ${ht:14:7} >&2
-  exit 61
+  echo "Node Synced and Running. Blockchain height: ${ht:14:7}" >&2
+  exit 0 #Success
 elif [[ "$sync" == *"awaiting"*  || "$sync" == *"body_sync"* || "$sync" == *"header_sync"* ]]; then
-  echo "Node is Syncing..." >&2
-  echo "Blockchain height:" ${ht:14} >&2
-  exit 61
+  echo "Node is Syncing...Blockchain height: ${ht:14}" >&2
+  exit 61 # Loading
 else
   echo "Check Node Status via ssh" >&2
-  exit 61
+  exit 1 #Error
 fi
 
 
