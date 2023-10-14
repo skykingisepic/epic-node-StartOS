@@ -5,18 +5,20 @@ if (($DURATION <= 6000 )); then
     exit 60
 fi
 
-sync=$(curl -s -H 'content-type: text/plain;' http://localhost:3413/v1/status | grep sync_status)
-ht=$(curl -s -H 'content-type: text/plain;' http://localhost:3413/v1/status | grep height)
+sync=$(curl -s -S http://localhost:3413/v1/status | grep sync_status)
+ht=$(curl -s -S http://localhost:3413/v1/status | grep height)
 
-error_code=$?
-if [ $error_code -ne 0 ]; then
-    echo $result >&2
-    exit $error_code
+ec=$?
+if [ $ec -ne 0 ]; then
+  if test "$ec" = "7" || test "$ec" = "1"; then
+    echo "Node Not Running - Check Status via ssh" >&2
+    exit 1
+  fi
 fi
 
 if [[ "$sync" == *"no_sync"* ]]; then
   echo "Node Synced and Running. Blockchain height: ${ht:14:7}" >&2
-  exit 0 #Success
+  exit 61 #Success is 0 but no echo just default manifest msg
 elif [[ "$sync" == *"awaiting"*  || "$sync" == *"body_sync"* || "$sync" == *"header_sync"* ]]; then
   echo "Node is Syncing...Blockchain height: ${ht:14}" >&2
   exit 61 # Loading
@@ -24,5 +26,4 @@ else
   echo "Check Node Status via ssh" >&2
   exit 1 #Error
 fi
-
 
