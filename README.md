@@ -75,6 +75,8 @@ git clone https://github.com/skykingisepic/epic-node-embassyOS.git
 
 ## Building
 
+Place epic node binaries in the cloned folder as epic-node-aarch64 and epic-node-x86_64
+
 To build the `epic-node` package using embassy-sdk version >=0.3.3, run the following command:
 
 ```
