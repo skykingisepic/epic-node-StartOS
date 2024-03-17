@@ -1,6 +1,6 @@
 # Wrapper for epic-node
 
-EPIC Node Server is a project that creates a service that runs on embassyOS. This repository creates the `s9pk` package that is installed to run `epic-node` on [embassyOS](https://github.com/Start9Labs/embassy-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
+EPIC Node Server is a project that creates a service that runs on embassyOS. This repository creates the `s9pk` package that is installed to run `epic-node` on [StartOS](https://github.com/Start9Labs/embassy-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
 
 ## Dependencies
 
@@ -14,7 +14,7 @@ Install the system dependencies below to build this project by following the ins
 - [embassy-sdk](https://github.com/Start9Labs/embassy-os/tree/master/backend)
 
 ## Build environment
-Prepare your embassyOS build environment. In this example we are using Linux Mint 20.
+Prepare your StartOS build environment. In this example we are using Linux Mint 20.
 1. Install docker
 ```
 sudo curl -fsSL https://get.docker.com -o- | bash
@@ -70,7 +70,7 @@ Now you are ready to build the `epic-node` package!
 Clone the project locally:
 
 ```
-git clone https://github.com/skykingisepic/epic-node-embassyOS.git
+git clone https://github.com/skykingisepic/epic-node-StartOS.git
 ```
 
 ## Building
@@ -104,7 +104,7 @@ make install
 
 ### Verify Install
 
-Go to your Embassy Services page, select **EPIC Node Server**, and start the service. Go to Logs and watch the progress of the bootstrap download and unzip (Server won't start until complete). Then, verify the Server is accessible via ssh, docker, and screen (see Instructions).
+Go to your Start9 Services page, select **EPIC Node Server**, and start the service. Go to Logs and watch the progress of the bootstrap download and unzip (Server won't start until complete). Then, verify the Server is accessible via ssh, docker, and screen (see Instructions).
 
 **Done!** 
 
