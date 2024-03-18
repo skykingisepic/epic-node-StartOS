@@ -4,14 +4,14 @@ EPIC Node Server is a project that creates a service that runs on embassyOS. Thi
 
 ## Dependencies
 
-Install the system dependencies below to build this project by following the instructions in the provided links. You can also find detailed steps to setup your environment in the service packaging [documentation](https://github.com/Start9Labs/service-pipeline#development-environment).
+Install the system dependencies below to build this project by following the instructions in the provided links. You can also find detailed steps to setup your environment in the service packaging [documentation]([https://docs.start9.com/0.3.5.x/developer-docs/packaging]).
 
 - [docker](https://docs.docker.com/get-docker)
 - [docker-buildx](https://docs.docker.com/buildx/working-with-buildx/)
 - [yq](https://mikefarah.gitbook.io/yq)
 - [deno](https://deno.land/)
 - [make](https://www.gnu.org/software/make/)
-- [embassy-sdk](https://github.com/Start9Labs/embassy-os/tree/master/backend)
+- [embassy-sdk](https://docs.start9.com/0.3.5.x/developer-docs/packaging)
 
 ## Build environment
 Prepare your StartOS build environment. In this example we are using Linux Mint 20.
