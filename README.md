@@ -61,3 +61,4 @@ For aarch64 build on Pi4 you must change one line in Cargo.toml located in core 
 randomx = { git = "https://github.com/johanneshahn/randomx-rs.git"}
 ```
 
+For users building epic node binary on Ubuntu 22+, you will need to install libssl1.1.1f from Ubuntu's package manager. See epic 3.6.0 release notes.
