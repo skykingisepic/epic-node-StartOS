@@ -1,69 +1,6 @@
 # Wrapper for epic-node
 
-EPIC Node Server is a project that creates a service that runs on embassyOS. This repository creates the `s9pk` package that is installed to run `epic-node` on [StartOS](https://github.com/Start9Labs/embassy-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
-
-## Dependencies
-
-Install the system dependencies below to build this project by following the instructions in the provided links. You can also find detailed steps to setup your environment in the service packaging [documentation]([https://docs.start9.com/0.3.5.x/developer-docs/packaging]).
-
-- [docker](https://docs.docker.com/get-docker)
-- [docker-buildx](https://docs.docker.com/buildx/working-with-buildx/)
-- [yq](https://mikefarah.gitbook.io/yq)
-- [deno](https://deno.land/)
-- [make](https://www.gnu.org/software/make/)
-- [embassy-sdk](https://docs.start9.com/0.3.5.x/developer-docs/packaging)
-
-## Build environment
-Prepare your StartOS build environment. In this example we are using Linux Mint 20.
-1. Install docker
-```
-sudo curl -fsSL https://get.docker.com -o- | bash
-sudo usermod -aG docker "$USER"
-exec sudo su -l $USER
-```
-2. Set buildx as the default builder
-```
-sudo docker buildx install
-sudo docker buildx create --use
-```
-3. Enable cross-arch emulated builds in docker and get alpine
-```
-sudo docker run --privileged --rm linuxkit/binfmt:v0.8
-sudo docker pull alpine
-```
-4. Install yq
-```
-sudo snap install yq
-or
-sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-sudo chmod a+x /usr/local/bin/yq
-```
-5. Install deno
-```
-sudo snap install deno
-or
-curl -fsSL https://deno.land/x/install/install.sh | sh
-mv /home/<user>/.deno/bin/deno /usr/bin/
-export DENO_INSTALL="/home/<user>/.deno
-```
-6. Install essentials build packages
-```
-sudo apt-get install -y build-essential openssl libssl-dev libc6-dev clang libclang-dev ca-certificates
-```
-7. Install Rust
-```
-curl https://sh.rustup.rs -sSf | sh
-# Choose nr 1 (default install)
-source $HOME/.cargo/env
-```
-8. Build and install embassy-sdk
-```
-cd ~/ && git clone --recursive https://github.com/Start9Labs/embassy-os.git
-cd embassy-os/backend/
-./install-sdk.sh
-sudo embassy-sdk init
-```
-Now you are ready to build the `epic-node` package!
+EPIC Node Server is a project that creates a service that runs on embassyOS. This repository creates the `s9pk` package that is installed to run `epic-node` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://docs.start9.com/0.3.5.x/developer-docs/packaging).
 
 ## Cloning
 
@@ -77,7 +14,7 @@ git clone https://github.com/skykingisepic/epic-node-StartOS.git
 
 Binaries are downloaded from github latest release of Epic Node Server and verified
 
-To build the `epic-node` package using embassy-sdk version >=0.3.3, run the following command:
+To build the `epic-node` package using embassy-sdk version 0.3.5+, run the following command:
 
 ```
 make
