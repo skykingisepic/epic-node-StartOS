@@ -14,7 +14,7 @@ git clone https://github.com/skykingisepic/epic-node-StartOS.git
 
 Binaries are downloaded from github latest release of Epic Node Server and verified
 
-To build the `epic-node` package using startos-sdk version 0.3.5+, run the following command:
+To build the `epic-node` package using start-sdk version 0.3.5+, run the following command:
 
 ```
 make
@@ -31,7 +31,7 @@ start-cli auth login
 start-cli --host https:/startos-server-name.local package install epic-node.s9pk
 ```
 
-If you already have your `startos-cli` config file setup with a default `host`, you can install simply by running:
+If you already have your `start-cli` config file setup with a default `host`, you can install simply by running:
 
 ```
 make install
