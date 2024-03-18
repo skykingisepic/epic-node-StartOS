@@ -22,7 +22,7 @@ verify: $(PKG_ID).s9pk
 	@echo "   Filesize: $(shell du -h $(PKG_ID).s9pk) is ready"
 
 install:
-ifeq (,$(wildcard ~/.embassy/config.yaml))
+ifeq (,$(wildcard ~/.start/config.yaml))
 	@echo; echo "You must define \"host: http://start-server-name.local\" in ~/.start/config.yaml config file first"; echo
 else
 	start-cli package install $(PKG_ID).s9pk
