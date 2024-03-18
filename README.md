@@ -14,7 +14,7 @@ git clone https://github.com/skykingisepic/epic-node-StartOS.git
 
 Binaries are downloaded from github latest release of Epic Node Server and verified
 
-To build the `epic-node` package using embassy-sdk version 0.3.5+, run the following command:
+To build the `epic-node` package using startos-sdk version 0.3.5+, run the following command:
 
 ```
 make
