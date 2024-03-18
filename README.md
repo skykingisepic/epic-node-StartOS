@@ -26,9 +26,9 @@ Run the following commands to determine successful install:
 > :information_source: Change startos-server-name.local to your StartOS address
 
 ```
-startos-cli auth login
+start-cli auth login
 # Enter your embassy password
-startos-cli --host https:/startos-server-name.local package install epic-node.s9pk
+start-cli --host https:/startos-server-name.local package install epic-node.s9pk
 ```
 
 If you already have your `startos-cli` config file setup with a default `host`, you can install simply by running:
