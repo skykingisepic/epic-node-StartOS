@@ -17,7 +17,7 @@ valid2 := $(shell sha256sum -c epic-3.6.0-startos-aarch64-sha256sum.txt)
 all: verify
 
 verify: $(PKG_ID).s9pk
-	@embassy-sdk verify s9pk $(PKG_ID).s9pk
+	@start-sdk verify s9pk $(PKG_ID).s9pk
 	@echo " Done!"
 	@echo "   Filesize: $(shell du -h $(PKG_ID).s9pk) is ready"
 
@@ -65,4 +65,4 @@ else ifeq ($(ARCH),x86_64)
 else
 	@echo "embassy-sdk: Preparing Universal Package ..."
 endif
-	@embassy-sdk pack
+	@start-sdk pack
