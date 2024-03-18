@@ -20,18 +20,18 @@ To build the `epic-node` package using embassy-sdk version 0.3.5+, run the follo
 make
 ```
 
-## Installing (on embassyOS)
+## Installing (on StartOS)
 
 Run the following commands to determine successful install:
-> :information_source: Change embassy-server-name.local to your Embassy address
+> :information_source: Change startos-server-name.local to your StartOS address
 
 ```
-embassy-cli auth login
+startos-cli auth login
 # Enter your embassy password
-embassy-cli --host https://embassy-server-name.local package install epic-node.s9pk
+startos-cli --host https:/startos-server-name.local package install epic-node.s9pk
 ```
 
-If you already have your `embassy-cli` config file setup with a default `host`, you can install simply by running:
+If you already have your `startos-cli` config file setup with a default `host`, you can install simply by running:
 
 ```
 make install
