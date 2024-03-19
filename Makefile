@@ -1,3 +1,12 @@
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+    SHA_CMD := sha256sum
+endif
+ifeq ($(UNAME_S),Darwin)
+    SHA_CMD := shasum -a 256
+endif
+
 PKG_ID := $(shell yq e ".id" manifest.yaml)
 PKG_VERSION := $(shell yq e ".version" manifest.yaml)
 TS_FILES := $(shell find ./ -name \*.ts)
@@ -8,8 +17,8 @@ $(shell tar -zxf epic-3.6.0-startos-aarch64.tar.gz)
 $(shell wget https://github.com/EpicCash/epic/releases/download/v3.6.0/epic-3.6.0-startos-x86_64.tar.gz)
 $(shell wget https://github.com/EpicCash/epic/releases/download/v3.6.0/epic-3.6.0-startos-x86_64-sha256sum.txt)
 $(shell tar -zxf epic-3.6.0-startos-x86_64.tar.gz)
-valid1 := $(shell sha256sum -c epic-3.6.0-startos-x86_64-sha256sum.txt)
-valid2 := $(shell sha256sum -c epic-3.6.0-startos-aarch64-sha256sum.txt)
+valid1 := $(shell $(SHA_CMD) -c epic-3.6.0-startos-x86_64-sha256sum.txt)
+valid2 := $(shell $(SHA_CMD) -c epic-3.6.0-startos-aarch64-sha256sum.txt)
 
 # delete the target of a rule if it has changed and its recipe exits with a nonzero exit status
 .DELETE_ON_ERROR:
