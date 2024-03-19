@@ -47,23 +47,25 @@ scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
 
 docker-images/aarch64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh checkup.sh epic-node-aarch64
-ifeq ($(findstring FAILED,$(valid2)),FAILED)
+ifeq ($(findstring OK,$(valid2)),)
 	@echo "sha256sum Validation Failed for epic-node-aarch64 binary"; exit 1
-endif
+else
 ifeq ($(ARCH),x86_64)
 else
 	mkdir -p docker-images
 	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=aarch64 --platform=linux/arm64 -o type=docker,dest=docker-images/aarch64.tar .
 endif
+endif
 
 docker-images/x86_64.tar: Dockerfile ./foundation.json ./epic-server.toml docker_entrypoint.sh checkup.sh epic-node-x86_64
-ifeq ($(findstring FAILED,$(valid1)),FAILED)
+ifeq ($(findstring OK,$(valid1)),)
 	@echo "sha256sum Validation Failed for epic-node-x86_64 binary"; exit 1
-endif
+else
 ifeq ($(ARCH),aarch64)
 else
 	mkdir -p docker-images
 	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) --build-arg ARCH=x86_64 --platform=linux/amd64 -o type=docker,dest=docker-images/x86_64.tar .
+endif
 endif
 
 $(PKG_ID).s9pk: manifest.yaml instructions.md icon.png LICENSE scripts/embassy.js docker-images/aarch64.tar docker-images/x86_64.tar
