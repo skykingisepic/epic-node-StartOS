@@ -1,6 +1,6 @@
 # Wrapper for epic-node
 
-EPIC Node Server is a project that creates a service that runs on embassyOS. This repository creates the `s9pk` package that is installed to run `epic-node` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://docs.start9.com/0.3.5.x/developer-docs/packaging).
+EPIC Node Server is a project that creates a service that runs on Start9 server. This repository creates the `s9pk` package that is installed to run `epic-node` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://docs.start9.com/latest/developer-docs/packaging).
 
 ## Cloning
 
@@ -27,7 +27,7 @@ Run the following commands to determine successful install:
 
 ```
 start-cli auth login
-# Enter your embassy password
+# Enter your StartOS password
 start-cli --host https:/startos-server-name.local package install epic-node.s9pk
 ```
 
