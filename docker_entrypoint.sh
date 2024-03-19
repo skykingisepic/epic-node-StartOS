@@ -7,7 +7,7 @@ else
 	echo "Setting up bootstrap chain_data file..."
 	mkdir -p ~/.epic
 	mkdir -p ~/.epic/main
-	wget https://bootstrap.epic.tech/bootstrap.zip -P ~/.epic/main
+	wget https://bootstrap.epiccash.com/bootstrap.zip -P ~/.epic/main
 	rm -R ~/.epic/main/chain_data
 	unzip ~/.epic/main/bootstrap.zip -d ~/.epic/main
 	rm ~/.epic/main/bootstrap.zip
