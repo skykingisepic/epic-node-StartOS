@@ -1,6 +1,9 @@
-epic-node.s9pk
-image.tar
+*.s9pk
 scripts/*.js
 .DS_Store
 .vscode/
 docker-images
+epic-*-startos-aarch64*
+epic-*-startos-x86_64*
+epic-node-aarch64
+epic-node-x86_64
